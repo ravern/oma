@@ -33,7 +33,11 @@ macro_rules! binary {
 
       let right_operand = Box::new($self.$parse()?);
 
-      left_operand = Box::new(Expression::Binary(BinaryExpression { left_operand, operator, right_operand }));
+      left_operand = Box::new(
+        Expression::Binary(
+          BinaryExpression { left_operand, operator, right_operand }
+        )
+      );
     }
   };
 }
